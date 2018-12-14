@@ -14,5 +14,5 @@
 // Include common definitions from above.
 apply from: '../build.common.gradle'
 dependencies {
-    compile 'org.openftc:ftc-opmode-tuner-common:0.2'
+    compile 'org.openftc:ftc-opmode-tuner-common:0.22'
 }
