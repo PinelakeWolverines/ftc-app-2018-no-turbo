@@ -4,8 +4,11 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Servo;
+
+import net.frogbots.ftcopmodetunercommon.opmode.TunableLinearOpMode;
+
 @TeleOp
-public class ArmCode extends LinearOpMode {
+public class ArmCode extends TunableLinearOpMode {
     DcMotor armBase;
     DcMotor armJoint;
     DcMotor extender;
@@ -31,6 +34,8 @@ public class ArmCode extends LinearOpMode {
         outtake = hardwareMap.servo.get("outtake");
         dumper = hardwareMap.servo.get("dumper");
         double position = 0;
+        telemetry.addData("Test", getInt("power"));
+        telemetry.update();
         while (opModeIsActive())
             while (gamepad1.left_bumper == true){
                 initEncoder();
